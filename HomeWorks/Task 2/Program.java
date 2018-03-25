@@ -10,13 +10,17 @@ class Program {
 			System.out.println("3. Sum of digits:");
 			System.out.println("4. Exit:");
 		    int command = scanner.nextInt();
+			if(command > 4){
+				System.out.println("Раздела под данным номером не существует!!!");
+				return;
+			}
 		    switch (command) {
 			            case 1: {
 							System.out.print("Введите два любых целых числа: ");
 							System.out.println();
-							System.out.print("Введите число i: ");
+							System.out.print("Введите первое число: ");
 					        int i = scanner.nextInt();
-							System.out.print("Введите число j: ");
+							System.out.print("Введите второе число: ");
 		                    int j = scanner.nextInt();
 							System.out.println("Четные числа в заданном диапазоне:");
 				                if(i<=j){
@@ -26,14 +30,14 @@ class Program {
 						                }
 					                }
 				                } 
-				            else {
-					            for (; i>=j ; i--) {
-						            if (i%2==0) {
-							        System.out.println(i);
-						            }
+				                else {
+					                for (; i>=j ; i--) {
+						               if (i%2==0) {
+							           System.out.println(i);
+						               }
 						
-					            }
-				            }
+					                }   
+				                }
 				        break;
 	                    }
 		                case 2: {
@@ -53,25 +57,25 @@ class Program {
 							        for (int i = 1; i <= n; i++) {
 								    int random_number = a + (int) (Math.random() * b);
 							        System.out.println(i + " - Случайное число: " + random_number);
-								Sum+=random_number;
-							}
+								    Sum+=random_number;
+							        }
 							System.out.println("Сумма случайных чисел: " + Sum);
 							break;
 						}
 			            case 3: {
-							int Sum = 0;
-						System.out.print("Введите любое число: ");	
-						int n = scanner.nextInt();	
-						System.out.print("Сумма цифр введенного случайного числа: ");
-							for(; n != 0; n /= 10){ 
-                               Sum += (n % 10); 
-                            } 
-                        System.out.println(Sum);
-						break;
+						   int Sum = 0;
+						   System.out.print("Введите любое число: ");	
+						   int n = scanner.nextInt();	
+						   System.out.print("Сумма цифр введенного случайного числа: ");
+							   for(; n != 0; n /= 10){ 
+                                  Sum += (n % 10); 
+                               }  
+                           System.out.println(Sum);
+						   break;
                         }
                         default: {
-					       System.exit(0);
-					    break;
+					       System.exit(4);
+					       break; 
 				        }					
 		    }
 		}	
