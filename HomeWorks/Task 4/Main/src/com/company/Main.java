@@ -1,21 +1,19 @@
 package com.company;
-
+import java.util.Scanner;
 public class Main {
 
-    public static int parse(char input[]) {
-        int s = 0;
-        int k = (int)Math.pow(10, input.length - 1);
-
-        for (char c : input) {
-            s = s + (c - '0') * k;
-            k = k / 10;
-        }
-        return s;
-    }
-
-    public static void main(String[] args)  {
-        char text[] = "32444643".toCharArray();
-        int x = parse(text);
-        System.out.println(x);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        char b = '5' - 48;
+        int codeB = b;
+        System.out.println(codeB);
+        System.out.println(a+b);
+//        char a = 'A';
+//        int codeA = a;
+//        System.out.println(codeA);
+//        int codeB = 66;
+//        char b = (char)codeB;
+//        System.out.println(b);
     }
 }

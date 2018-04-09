@@ -1,30 +1,30 @@
 package com.company;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
-        int m[][] = new int[6][6];
-        int min = 0;
-
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; j < 6; j++) {
-                m[i][j] = (int) (Math.random() * 10);
-                System.out.print(m[i][j] + " ");
-            }
-            System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Укажите колличество строк массива: ");
+        int m = scanner.nextInt();
+        System.out.print("Укажите количество столбцов массива: ");
+        int n = scanner.nextInt();
+       int a[][] = new int[m][n];
+       for(int i = 0; i < m; i++){
+           for(int j = 0; j < n ; j++){
+               a[i][j] = (int)((Math.random()*8 + 1));
+               System.out.print(a[i][j] + " ");
+           }
+           System.out.println();
         }
-        System.out.println();
-
-        for (int i = 0; i < 6; i++) {
-            min = m[i][0];
-            for (int j = 1; j < 6; j++) {
-                if (m[i][j] < min)
-                    min = m[i][j];
+        System.out.print("Укажите номер строки, в которой хотите отыскать минимальный элемент массива: ");
+        int i = scanner.nextInt();
+        int Min = a[i][0];
+        for(int j = 1; j < n; j++){
+            if(a[i][j] < Min){
+                a[i][j]= Min;
             }
-            System.out.println(min);
         }
-
-
+        System.out.println(Min);
     }
 }
