@@ -1,7 +1,7 @@
 package com.company;
 
-public class Figure {
-    public void area(){}
-    public void draw(){}
+public abstract class Figure {
+    public abstract void area();
+    public abstract void draw();
 }
 

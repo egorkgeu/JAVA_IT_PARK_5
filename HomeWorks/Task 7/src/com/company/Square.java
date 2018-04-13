@@ -1,14 +1,22 @@
 package com.company;
 
 public class Square extends Figure {
-    int a = 4;
+    private int lenght;
+
+    public Square(int lenght) {
+        this.lenght = lenght;
+    }
+
+    public int getLenght() {
+        return lenght;
+    }
 
     @Override
     public void draw(){
         System.out.print("Квадрат = ");
     }
     public void area() {
-        int area = (int) (Math.pow(a, 2));
+        int area = (int) (Math.pow(this.lenght, 2));
         System.out.println(area);
     }
 }
